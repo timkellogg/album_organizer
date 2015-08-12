@@ -1,7 +1,6 @@
 require 'rspec'
 require 'song'
 
-
 describe(Song) do
 
   before() do
@@ -66,17 +65,3 @@ describe(Song) do
     end
   end
 end
-
-
-
-# Artists
-  # name
-  # cds (arr)
-
-# Cds
-  # songs (arr)
-  # rating
-
-# Songs
-  # name
-  # length
