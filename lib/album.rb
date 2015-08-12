@@ -15,9 +15,12 @@ class Album
     @@albums
   end
 
+  define_singleton_method(:clear) do
+    @@albums = Array.new
+  end
+
   define_method(:save) do
     @@albums.push(self)
   end
 
-  
 end
