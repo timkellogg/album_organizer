@@ -6,6 +6,8 @@ describe(Song) do
 
   before() do
     @song = Song.new("My Way", "Frank Sinatra", "3:00")
+    @another_song = Song.new("All the Small Things", "Blink-182", "2:42")
+
   end
 
   describe('#title') do
@@ -26,6 +28,13 @@ describe(Song) do
     end
   end
 
+  describe('#id') do
+    it('returns the id of the song') do
+      @another_song.id
+      expect(@another_song.id).to eq(1)
+    end
+  end
+
   describe('.all') do
     it('should be empty by default') do
       expect(Song.all).to eq([])
@@ -34,7 +43,6 @@ describe(Song) do
 
   describe('.clear') do
     it('should clear out the array of saved cars') do
-      @another_song = Song.new("All the Small Things", "Blink-182", "2:42")
       @another_song.save
       Song.clear
       expect(Song.all).to eq([])
@@ -43,7 +51,6 @@ describe(Song) do
 
   describe('#save') do
     it('should store the song in the array of songs') do
-      @another_song = Song.new("All the Small Things", "Blink-182", "2:42")
       @another_song.save
       expect(Song.all).to eq([@another_song])
     end
