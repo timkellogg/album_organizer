@@ -52,4 +52,11 @@ describe(Album) do
       expect(Album.all).to eq([])
     end
   end
+
+  describe('.find') do | number |
+    it('finds an album by it\'s id') do
+      @test_album.save
+      expect(Album.find(1)).to eq(@test_album)
+    end
+  end
 end

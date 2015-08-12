@@ -11,6 +11,10 @@ class Album
     @id     = @@albums.length + 1
   end
 
+  define_method(:save) do
+    @@albums.push(self)
+  end
+
   define_singleton_method(:all) do
     @@albums
   end
@@ -19,8 +23,13 @@ class Album
     @@albums = Array.new
   end
 
-  define_method(:save) do
-    @@albums.push(self)
+  define_singleton_method(:find) do | number |
+    found_album = nil
+    @@albums.each do | album |
+      if album.id == number
+        found_album = album
+      end
+    end
+    found_album
   end
-
 end
