@@ -53,7 +53,7 @@ describe(Album) do
     end
   end
 
-  describe('.find') do | number |
+  describe('.find') do
     it('finds an album by it\'s id') do
       @test_album.save
       expect(Album.find(1)).to eq(@test_album)
@@ -61,7 +61,13 @@ describe(Album) do
   end
 
 
-  describe('#add_album') do
-    
+  describe('#add_song') do
+    it('adds a song to the album') do
+      @song = Song.new("My Way", "Frank Sinatra", "3:00")
+      @test_album.add_song(@song)
+      expect(@test_album.songs).to eq([@song])
+    end
   end
+
+
 end
