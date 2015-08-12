@@ -5,24 +5,36 @@ require 'song'
 describe(Song) do
 
   before() do
-    @song = Song.new("My Way", 300)
+    @song = Song.new("My Way", "Frank Sinatra", "3:00")
   end
 
-  describe('#name') do
-    it('returns the name of the song') do
-      expect(@song.name).to eq("My Way")
+  describe('#title') do
+    it('returns the title of the song') do
+      expect(@song.title).to eq("My Way")
+    end
+  end
+
+  describe('#artist') do
+    it('returns the artist of the song') do
+      expect(@song.artist).to eq("Frank Sinatra")
     end
   end
 
   describe('#length') do
     it('returns the length of the song') do
-      expect(@song.length).to eq(300)
+      expect(@song.length).to eq("3:00")
     end
   end
 
   describe('.all') do
     it('should be empty by default') do
       expect(Song.all).to eq([])
+    end
+  end
+
+  describe('.clear') do
+    it('should clear out the array of saved cars') do
+      @another_song = nil
     end
   end
 end

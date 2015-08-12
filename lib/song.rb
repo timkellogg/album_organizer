@@ -2,11 +2,12 @@ class Song
 
   @@songs = Array.new
 
-  attr_reader :name, :length
+  attr_reader :title, :length, :id, :artist
 
-  define_method(:initialize) do | name, length |
-    @name   = name
+  define_method(:initialize) do | title, artist, length |
+    @title  = title
     @length = length
+    @artist = artist
     @id     = @@songs.length + 1
   end
 
