@@ -19,6 +19,12 @@ describe(Song) do
       expect(@song.length).to eq(300)
     end
   end
+
+  describe('.all') do
+    it('should be empty by default') do
+      expect(Song.all).to eq([])
+    end
+  end
 end
 
 
