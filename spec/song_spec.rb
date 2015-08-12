@@ -7,7 +7,7 @@ describe(Song) do
   before() do
     @song = Song.new("My Way", "Frank Sinatra", "3:00")
     @another_song = Song.new("All the Small Things", "Blink-182", "2:42")
-
+    Song.clear
   end
 
   describe('#title') do
@@ -53,6 +53,16 @@ describe(Song) do
     it('should store the song in the array of songs') do
       @another_song.save
       expect(Song.all).to eq([@another_song])
+    end
+  end
+
+  describe('.find') do
+    it('finds a song by it\'s id') do
+      @song.save
+      @another_song.save
+      @a_third_song = Song.new("Peace Train", "Cat Stevens", "4:30")
+      @a_third_song.save
+      expect(Song.find(3)).to eq(@a_third_song)
     end
   end
 end

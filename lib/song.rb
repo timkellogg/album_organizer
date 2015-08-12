@@ -24,4 +24,13 @@ class Song
     @@songs.push(self)
   end
 
+  define_singleton_method(:find) do | number |
+    found_song = nil
+    @@songs.each do | song |
+      if song.id == number
+        found_song = song
+      end
+    end
+    found_song
+  end
 end
