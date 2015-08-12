@@ -1,0 +1,25 @@
+<h2>Albums</h2>
+
+<table>
+  <tr>
+    <td>
+      Artist
+    </td>
+    <td>
+      Title
+    </td>
+  </tr>
+
+  <% @albums.each do | album | %>
+  <tr>
+    <td>
+      <a href="/artists/<%= album.artist %>"><%= album.artist %></a>
+    </td>
+    <td>
+      <a href="/albums/<%= album.id %>"><%= album %></a>
+    </td>
+  </tr>
+
+  <% end %>
+
+</table>
