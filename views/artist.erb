@@ -1,12 +1,9 @@
-<div class="row text-center">
-  <h2>Albums</h2>
-</div>
+<h2><%= @artist.name %></h2>
+
+<h3>Albums</h3>
 
 <table class="table table-striped">
   <tr>
-    <td>
-      Artist
-    </td>
     <td>
       Title
     </td>
@@ -15,11 +12,8 @@
     </td>
   </tr>
 
-  <% @albums.each do | album | %>
+  <% @artist.albums.each do | album | %>
   <tr>
-    <td>
-      <a href="/artists/<%= Artist.find_name(album.artist).id %>"><%= album.artist %></a>
-    </td>
     <td>
       <a href="/albums/<%= album.id %>"><%= album.title %></a>
     </td>
@@ -27,7 +21,5 @@
       <%= album.year %>
     </td>
   </tr>
-
   <% end %>
-
-</table>
+  

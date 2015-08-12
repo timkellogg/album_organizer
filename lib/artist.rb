@@ -36,4 +36,14 @@ class Artist
     end
     found_artist
   end
+
+  define_singleton_method(:find_name) do | name |
+    found_artist = nil
+    @@artists.each do | artist |
+      if artist.name == name
+        found_artist = artist
+      end
+    end
+    found_artist
+  end
 end

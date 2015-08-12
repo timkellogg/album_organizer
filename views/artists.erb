@@ -1,6 +1,6 @@
 <h2>Artists</h2>
 
-<table>
+<table class="table table-striped">
   <tr>
     <td>
       Name
@@ -10,7 +10,7 @@
   <% @artists.each do | artist | %>
   <tr>
     <td>
-      <a href="/artists/<%= artist.id %>"><%= artist %></a>
+      <a href="/artists/<%= artist.id %>"><%= artist.name %></a>
     </td>
   </tr>
   <% end %>
