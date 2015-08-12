@@ -4,7 +4,7 @@ require 'album'
 
 describe(Album) do
 
-  before() do 
+  before() do
     @test_album = Album.new("Nevermind", "Nirvana", 1991)
   end
 
@@ -23,6 +23,12 @@ describe(Album) do
     describe('#year') do
       it('returns the year of the album') do
         expect(@test_album.year).to eq(1991)
+      end
+    end
+
+    describe('#id') do
+      it('returns the id of the album') do
+        expect(@test_album.id).to eq(1)
       end
     end
 
