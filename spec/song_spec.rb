@@ -41,7 +41,7 @@ describe(Song) do
   end
 
   describe('.clear') do
-    it('should clear out the array of saved cars') do
+    it('should clear out the array of saved songs') do
       @another_song.save
       Song.clear
       expect(Song.all).to eq([])

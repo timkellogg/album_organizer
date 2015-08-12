@@ -59,4 +59,9 @@ describe(Album) do
       expect(Album.find(1)).to eq(@test_album)
     end
   end
+
+
+  describe('#add_album') do
+    
+  end
 end

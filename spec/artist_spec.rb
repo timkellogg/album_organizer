@@ -52,4 +52,15 @@ describe(Artist) do
       expect(Artist.find(3)).to eq(@a_third_artist)
     end
   end
+
+  describe('#add_album') do
+    it('adds an album to the array of albums of the artist') do
+      @test_album = Album.new('Title', 'Artist', 2004)
+      @artist.add_album(@test_album)
+      expect(@artist.albums).to eq([@test_album])
+    end
+  end
+
+
+
 end

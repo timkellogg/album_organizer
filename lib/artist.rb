@@ -7,11 +7,15 @@ class Artist
   define_method(:initialize) do | name |
     @name  = name
     @id     = @@artists.length + 1
-    @albums = nil
+    @albums = Array.new
   end
 
   define_method(:save) do
     @@artists.push(self)
+  end
+
+  define_method(:add_album) do | album |
+    @albums.push(album)
   end
 
   define_singleton_method(:all) do
