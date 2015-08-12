@@ -19,4 +19,9 @@ class Song
   define_singleton_method(:clear) do
     @@songs = Array.new
   end
+
+  define_method(:save) do
+    @@songs.push(self)
+  end
+
 end

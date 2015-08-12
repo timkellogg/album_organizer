@@ -34,7 +34,18 @@ describe(Song) do
 
   describe('.clear') do
     it('should clear out the array of saved cars') do
-      @another_song = nil
+      @another_song = Song.new("All the Small Things", "Blink-182", "2:42")
+      @another_song.save
+      Song.clear
+      expect(Song.all).to eq([])
+    end
+  end
+
+  describe('#save') do
+    it('should store the song in the array of songs') do
+      @another_song = Song.new("All the Small Things", "Blink-182", "2:42")
+      @another_song.save
+      expect(Song.all).to eq([@another_song])
     end
   end
 end
