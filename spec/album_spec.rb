@@ -32,4 +32,17 @@ describe(Album) do
       end
     end
 
+    describe('.all') do
+      it('returns an array of the albums in the album array') do
+        expect(Album.all).to eq([])
+      end
+    end
+
+    describe('#save') do
+      it('saves the album into the album array') do
+        @test_album.save
+        expect(Album.all).to eq([@test_album])
+      end
+    end
+
 end

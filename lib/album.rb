@@ -10,5 +10,14 @@ class Album
     @year   = year
     @id     = @@albums.length + 1
   end
+
+  define_singleton_method(:all) do
+    @@albums
+  end
+
+  define_method(:save) do
+    @@albums.push(self)
+  end
+
   
 end
